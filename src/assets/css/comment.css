@@ -1,0 +1,51 @@
+.comment-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.comment-form {
+    display: flex;
+    gap: 1rem;
+}
+
+.comment-form textarea{
+    flex-grow:1;
+    resize: none;
+}
+
+.comment-form .send-button {
+    width: 3rem;
+}
+
+.comment-wrap {
+    padding-top: 1rem;
+    border-top: 1px solid var(--black-color);
+}
+
+.comment-content {
+    padding: 0.5rem;
+    display:flex;
+    align-items: center;
+}
+
+.comment-content p {
+    flex-grow: 1;
+}
+
+
+.comment-wrap.child-comment {
+    margin-top: 1rem;
+    padding-left: 2rem;
+}
+
+.comment-form.child-comment {
+    margin-top: 1rem;
+    padding-left: 2rem;
+}
+
+.comment-buttons {
+    display: flex;
+    gap: 0.5rem;
+}

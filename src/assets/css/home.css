@@ -1,0 +1,16 @@
+.main-page .content-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 20vh;
+    font-size: 1.3rem;
+    margin-bottom: 36.2vh;
+}
+
+.main-page .link-wrap {
+    display: flex;
+    margin-top: 2rem;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+}

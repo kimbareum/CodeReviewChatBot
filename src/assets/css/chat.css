@@ -1,0 +1,122 @@
+article.chat-page .title-wrap{
+    justify-content: space-between;
+}
+
+article.write-page .title-wrap input {
+    padding: 0.5rem;
+    width: 20rem;
+}
+
+article.write-page .chat-form {
+    margin-bottom: 19.3rem;
+}
+
+.chat-window {
+    margin-bottom: 2rem;
+}
+
+.ai-chat,
+.user-chat {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.7rem;
+    margin-top: 1.5rem;
+}
+
+.ai-chat img,
+.user-chat img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+}
+
+.chat-content {
+    width: fit-content;
+    max-width: 50vw;
+    padding: 1rem;
+    color: var(--black-color);
+    margin-top: 1.7rem;
+    margin-right: 4rem;
+    line-height: 1.5rem; 
+    word-wrap: break-word;
+    white-space: pre-wrap;
+}
+
+.chat-content pre::-webkit-scrollbar {
+    height: 0.5rem;
+}
+
+.chat-content pre::-webkit-scrollbar-thumb {
+    background-color: var(--gray-color);
+    border-radius: 10px;
+}
+
+
+.ai-chat .chat-content {
+    background-color: orange;
+    border-radius: 0 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.user-chat {
+    flex-direction: row-reverse;
+}
+
+.user-chat .chat-content {
+    background-color: skyblue;
+    border-radius: 20px 0px 20px 20px;
+    margin-right: 0;
+    margin-left: 4rem;
+}
+
+.chat-form {
+    position: relative;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    height: 20rem;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.chat-form textarea {
+    resize: none;
+    flex-grow: 1;
+    padding: 0.5rem;
+    background-color: var(--black-color);
+    color: var(--white-color);
+    border: none;
+}
+
+.chat-form textarea::-webkit-scrollbar {
+    width: 0.5rem;
+    background-color: none;
+
+}
+
+.chat-form textarea::-webkit-scrollbar-thumb {
+    background-color: var(--gray-color);
+    border-radius: 10px;
+}
+
+.chat-form input {
+    width: 3rem;
+    background: transparent url('../icons/icon-chatbutton.svg') no-repeat 50% 50% / 1.5rem;
+}
+
+@keyframes rotateBackground {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.chat-form input.loading {
+    background: transparent url('../icons/icon-loading.svg') no-repeat 50% 50% / 1.5rem;
+    cursor:default;
+    animation: rotateBackground 5s linear infinite;
+}

@@ -1,0 +1,73 @@
+.list-wrap {
+    margin-top: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    table-layout: fixed;
+}
+
+.list-wrap .chat-wrap {
+    border-bottom: 2px solid var(--black-color);
+}
+
+.list-wrap .chat-wrap th {
+    font-weight: 600;
+}
+
+.list-wrap .chat-wrap th,
+.list-wrap .chat-wrap td {
+    padding: 1rem;
+    text-align: center;
+}
+
+.list-wrap .chat-wrap td:first-child {
+    text-align: start;
+    overflow: hidden;
+    min-width: 10rem;
+    word-break: keep-all;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.list-wrap .chat-wrap :nth-child(2) {
+    width: 10rem;
+    word-break: keep-all;
+}
+
+.list-wrap .chat-wrap :nth-child(3) {
+    min-width: 3rem;
+    width: 3rem;
+}
+
+.list-wrap .chat-wrap :last-child {
+    min-width: 9rem;
+    width: 9rem;
+}
+
+.page-list {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.page-list li{
+    display: flex;
+}
+
+.page-list li a {
+    width: 1rem;
+    height: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.page-list .page.current-page {
+    text-decoration: underline;
+}
+
+.chat-list footer {
+    position: fixed;
+    bottom: 2rem;
+    width: 83%;
+}

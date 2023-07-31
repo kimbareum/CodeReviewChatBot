@@ -1,0 +1,22 @@
+header .title {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: var(--main-color);
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding-left: 2rem;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 4rem;
+    align-items: center;
+    font-size: 1.3rem;
+    gap: 1rem;
+    z-index: 10;
+}
+
+header .title img{
+    width: 2rem;
+    height: 2rem;
+}
