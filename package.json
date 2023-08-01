@@ -15,8 +15,7 @@
     "react-scripts": "^5.0.1",
     "react-syntax-highlighter": "^15.5.0",
     "remark-gfm": "^3.0.1",
-    "web-vitals": "^2.1.4",
-    "nth-check": ">=2.0.1"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -46,7 +45,6 @@
   },
   "homepage": "https://kimbareum.github.io/CodeReviewChatBot/",
   "devDependencies": {
-    "gh-pages": "^5.0.0",
-    "nth-check": ">=2.0.1"
+    "gh-pages": "^5.0.0"
   }
 }
