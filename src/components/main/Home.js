@@ -11,7 +11,7 @@ const Home = (props) => {
 	return (
 		<Layout className='main-page'>
       <div className='title-wrap'>
-        <h3>CodeReview ChatBot에 오신것을 환영합니다.</h3>
+        <h2>CodeReview ChatBot에 오신것을 환영합니다.</h2>
       </div>
       <div className='content-wrap'>
         <p>CodeReview ChatBot은 여러분이 작성한 코드를 ChatGPT를 통해 분석하고, 리뷰를 해주는 서비스입니다.</p>
@@ -41,7 +41,7 @@ export default Home;
 // return (
 //   <article className='error-page'>
 //     <div className='title-wrap'>
-//       <h3>정상적이지 않은 접근입니다.</h3>
+//       <h2>정상적이지 않은 접근입니다.</h2>
 //     </div>
 //     <div className='content-wrap'>
 //       <p>존재하지 않는 페이지거나, 페이지에 접근할 권한이 없습니다.</p>

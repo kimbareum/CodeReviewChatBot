@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 const ChatButtons = (props) => {
   const chat_id = props.chat_id
-  const navigater = useNavigate()
+  const navigate = useNavigate()
   const { updateSideBar, updateChatList } = useContext(UpdateContext)
 
   const modifyTitle = () => {
@@ -27,7 +27,7 @@ const ChatButtons = (props) => {
       if (response.status === 'good') {
         updateSideBar()
         updateChatList()
-        navigater('/chat/list/')
+        navigate('/chat/list/')
       } else {
         console.log('error', response)
       }

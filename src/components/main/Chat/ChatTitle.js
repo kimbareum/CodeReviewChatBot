@@ -10,7 +10,7 @@ const ChatTitle = (props) => {
 
   const chat = props.chat
   const userOwned = props.userOwned;
-  const navigater = useNavigate();
+  const navigate = useNavigate();
   const [ mode, setMode ] = useState('RENDER')
   const [ title, setTitle ] = useState(chat.title)
   const [ inputValue, setInputValue ] = useState(title)
@@ -42,7 +42,7 @@ const ChatTitle = (props) => {
       updateSideBar();
     }
     else {
-      navigater('/error/')
+      navigate('/error/')
     }
   }
   
@@ -50,14 +50,14 @@ const ChatTitle = (props) => {
   return (
     <div className='title-wrap'>
       {mode === 'RENDER'? (
-        <h3>{title}</h3>
+        <h2>{title}</h2>
       ):(
-        <h3>
+        <h2>
           <form method='post' className='title-modify' onSubmit={submitModifyTitle}>
             <input name='title' value={inputValue} onChange={handleChange} maxLength='30'/>
             <button className='button gray'>수정</button>
           </form>
-        </h3>
+        </h2>
       )}
       <div className='author-wrap'>
         {userOwned&&(

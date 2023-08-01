@@ -136,7 +136,7 @@ const Comments = (props) => {
   const [comments, setComments] = useState(props.comments)
   const { isLoggedIn, logout } = useContext(AuthContext)
   // const [URL, setURL] = useState()
-  const navigater = useNavigate()
+  const navigate = useNavigate()
 
   useEffect(() => {
     setComments(props.comments)
@@ -154,10 +154,10 @@ const Comments = (props) => {
     }
     else if (response.status === 'Unauthorized') {
       logout();
-      navigater(`/login/`);
+      navigate(`/login/`);
     }
     else {
-      navigater(`/error/`);
+      navigate(`/error/`);
     }
   }
 
@@ -171,10 +171,10 @@ const Comments = (props) => {
     }
     else if (response.status === 'Unauthorized') {
       logout();
-      navigater(`/login/`);
+      navigate(`/login/`);
     }
     else {
-      navigater(`/error/`);
+      navigate(`/error/`);
     }
   }
 
@@ -188,11 +188,11 @@ const Comments = (props) => {
     }
     else if (response.status === 'Unauthorized') {
       logout();
-      navigater(`/login/`);
+      navigate(`/login/`);
     }
     else {
       console.log(response);
-      navigater(`/error/`);
+      navigate(`/error/`);
     }
   }
 

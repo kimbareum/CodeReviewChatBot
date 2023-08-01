@@ -14,7 +14,7 @@ const Profile = (props) => {
   const [mode, setMode] = useState('UNUPDATED')
   const { logout, updateProfile } = useContext(AuthContext);
   const { updateSideBar } = useContext(UpdateContext)
-  const navigater = useNavigate();
+  const navigate = useNavigate();
 
 
   const handleNicknameChange = (e) => {
@@ -49,10 +49,10 @@ const Profile = (props) => {
     }
     else if (response.status === 'Unauthorized') {
       logout();
-      navigater(`/login/`);
+      navigate(`/login/`);
     }
     else {
-      navigater(`/error/`);
+      navigate(`/error/`);
     }
   }
 
@@ -65,19 +65,19 @@ const Profile = (props) => {
       }
       else if (response.status === 'Unauthorized') {
         logout();
-        navigater(`/login/`);
+        navigate(`/login/`);
       }
       else {
-        navigater(`/error/`);
+        navigate(`/error/`);
       }
     }
     fetchData()
-  }, [logout, navigater])
+  }, [logout, navigate])
 
     return (
       <Layout className='profile-page'>
         <div className='title-wrap'>
-          <h3>Profile</h3>
+          <h2>Profile</h2>
         </div>
       <form method='post' className='profile-form' onSubmit={submitProfile}>
         <div className='profile-wrap'>

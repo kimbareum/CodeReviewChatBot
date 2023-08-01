@@ -9,13 +9,13 @@ const Login = (props) => {
 
     const { login, isLoggedIn }  = useContext(AuthContext);
     const [ errors, setErrors ] = useState([])
-    const navigater = useNavigate();
+    const navigate = useNavigate();
 
     useEffect(() => {
       if (isLoggedIn) {
-        navigater('/chat/list/');
+        navigate('/chat/list/');
       }
-    }, [isLoggedIn, navigater])
+    }, [isLoggedIn, navigate])
 
     const submitLogin = (event) => {
         event.preventDefault()
@@ -25,7 +25,7 @@ const Login = (props) => {
             const response = await APIlogin(formData)
             if (response.status) {
               login(response.data)
-              navigater(`/chat/list/`);
+              navigate(`/chat/list/`);
               setErrors([])
             }
             else {
@@ -40,7 +40,7 @@ const Login = (props) => {
     return (
       <Layout className='login-page'>
         <div className='title-wrap'>
-          <h3>Login</h3>
+          <h2>Login</h2>
         </div>
         <form method='post' className='auth-form' onSubmit={ submitLogin }>
           {errors && (

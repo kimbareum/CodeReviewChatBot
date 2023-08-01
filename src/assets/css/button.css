@@ -70,3 +70,9 @@ input, button {
 .send-button {
     background: transparent url('../icons/icon-send.svg') no-repeat 50% 50% / 1.5rem;
 }
+
+.search-button {
+    width: 2rem;
+    height: 2rem;
+    background: transparent url('../icons/icon-search.svg') no-repeat 50% 50% / 1.5rem;
+}

@@ -11,7 +11,7 @@ function SideChatList(props) {
   const item = props.item;
   const { updateSideBar, updateChatList } = useContext(UpdateContext)
   const { logout }  = useContext(AuthContext)
-  const navigater = useNavigate()
+  const navigate = useNavigate()
 
   const submitDeleteChat = (event) => {
     event.preventDefault()
@@ -25,10 +25,10 @@ function SideChatList(props) {
       }
       else if (response.status === 'Unauthorized') {
         logout();
-        navigater(`/login/`);
+        navigate(`/login/`);
       }
       else {
-        navigater(`/error/`);
+        navigate(`/error/`);
       }
     }
     fetchData()

@@ -8,15 +8,15 @@ import Layout from './Layout';
 
 const SignUp = (props) => {
 
-  const navigater = useNavigate()
+  const navigate = useNavigate()
   const [errors, setErrors] = useState([])
   const { isLoggedIn } = useContext(AuthContext)
 
   useEffect(() => {
     if (isLoggedIn) {
-      navigater('/chat/list/');
+      navigate('/chat/list/');
     }
-  }, [isLoggedIn, navigater])
+  }, [isLoggedIn, navigate])
 
 
   const submitSignup = async (event) => {
@@ -24,7 +24,7 @@ const SignUp = (props) => {
     const formData = new FormData(event.target)
     const response = await APIsignup(formData)
     if (response.status) {
-      navigater(`/login/`);
+      navigate(`/login/`);
       setErrors([])
     }
     else {
@@ -35,7 +35,7 @@ const SignUp = (props) => {
     return (
       <Layout className='signup-page'>
         <div className='title-wrap'>
-          <h3>Sign Up</h3>
+          <h2>Sign Up</h2>
         </div>
         <form method='post' className='auth-form' onSubmit={ submitSignup }>
           <div className='auth-wrap'>

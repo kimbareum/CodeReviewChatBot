@@ -5,17 +5,12 @@ import { BASE_URL, APIcall } from '../../utils/api';
 import AuthContext from '../Context/Auth/AuthContext';
 import UpdateContext from '../Context/Update/UpdateContext';
 
-import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { materialDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import remarkGfm from "remark-gfm";
-
 import Layout from './Layout';
 import ChatTitle from './Chat/ChatTitle';
 import Comments from './Chat/Comments';
+import MarkdownRenderer from '../../utils/MarkdownRenderer';
 
 import logo from '../../assets/images/logo.png'
-
 
 
 const Chat = () => {
@@ -27,14 +22,14 @@ const Chat = () => {
     const [ userOwned, setUserOwned] = useState(false)
     const { logout, isLoggedIn } = useContext(AuthContext);
     const { updateSideBar } = useContext(UpdateContext)
-    const navigater = useNavigate()
+    const navigate = useNavigate()
 
 
     const render = useCallback((response) => {
       if (response.status === 'good'){
         setChat(response.data.chat)
         setComments(response.data.comments)
-        // console.log(comments)
+        localStorage.setItem('visited_post', response.data.visited_post)
         if (response.data.user_owned){
           setUserOwned(true)
         } else {
@@ -44,19 +39,20 @@ const Chat = () => {
       }
       else if (response.status === 'Unauthorized') {
         logout();
-        navigater(`/login/`);
+        navigate(`/login/`);
       }
       else {
-        navigater(`/error/`);
+        navigate(`/error/`);
       }
-    }, [logout, navigater])
+    }, [logout, navigate])
 
 
     useEffect(() => {
       const fetchData = async () => {
         let response = {}
+        const visitedPost= localStorage.getItem('visited_post');
         if (isLoggedIn){
-          response = await APIcall('authGet', `/chat/detail/${chat_id}/`);
+          response = await APIcall('authGet', `/chat/detail/${chat_id}/`, {params:{visited_post:visitedPost}});
           }
           else {
             response = await APIcall('get', `/chat/detail/${chat_id}/`);
@@ -98,10 +94,10 @@ const Chat = () => {
         }
         else if (response.status === 'Unauthorized') {
           logout();
-          navigater(`/login/`);
+          navigate(`/login/`);
         }
         else {
-          navigater('/error/');
+          navigate('/error/');
         }
       }
       fetchData()
@@ -123,31 +119,7 @@ const Chat = () => {
                   ) : (
                     <div key={index} className='ai-chat'>
                       <img src={logo} alt="ai-icon"/>
-                      <ReactMarkdown
-                        className="chat-content"
-                        remarkPlugins={[remarkGfm]} // Allows us to have embedded HTML tags in our markdown
-                        components={{
-                          code({ node, inline, className, children, ...props }) {
-                            const match = /language-(\w+)/.exec(className || "");
-                            return !inline && match ? (
-                              <SyntaxHighlighter
-                                lineProps={{style: {wordBreak: 'break-all', whiteSpace: 'pre-wrap'}}}
-                                wrapLines={true} 
-                                language={match[1]}
-                                PreTag="pre"
-                                {...props}
-                                style={materialDark}
-                              >
-                                {String(children).replace(/\n$/, "")}
-                              </SyntaxHighlighter>
-                            ) : (
-                              <code {...props}>{children}</code>
-                            );
-                          }
-                        }}
-                        >
-                        {item.content}
-                      </ReactMarkdown>
+                      <MarkdownRenderer boxClass='chat-content' content={item.content} />
                     </div>
                   )
                 );

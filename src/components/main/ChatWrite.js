@@ -9,7 +9,7 @@ import Layout from './Layout';
 const ChatWrite = () => {
     const [wait, setWait] = useState(false)
     const { logout, updateSideBar } = useContext(UpdateContext)
-    const navigater = useNavigate();
+    const navigate = useNavigate();
 
     const submitQuestion = (event) => {
       event.preventDefault();
@@ -27,14 +27,14 @@ const ChatWrite = () => {
           const response = await APIcall('post', '/chat/write/', formData);
           if (response.status === "good"){
             updateSideBar();
-            navigater(`/chat/${response.data.id}`);
+            navigate(`/chat/${response.data.id}`);
           } 
           else if (response.status === 'Unauthorized') {
             logout();
-            navigater(`/login/`);
+            navigate(`/login/`);
           }
           else {
-            navigater('/error/');
+            navigate('/error/');
           }
           setWait(false);
       }
@@ -47,7 +47,7 @@ const ChatWrite = () => {
         <Layout className='write-page'>
           <form method='post' onSubmit={ submitQuestion }>
             <div className='title-wrap'>
-              <h3><input name='title' type='text' placeholder='제목을 입력해주세요.' maxLength='30'/></h3>
+              <h2><input name='title' type='text' placeholder='제목을 입력해주세요.' maxLength='30'/></h2>
             </div>
             <div className='chat-window'>
               <div className='ai-chat'>
