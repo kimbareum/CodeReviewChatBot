@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 
 import '../../assets/css/profile.css'
 
-const Profile = (props) => {
+const Profile = () => {
 
   const [nickname, setNickname] = useState([]);
   const [imagePath, setImagePath] = useState('');

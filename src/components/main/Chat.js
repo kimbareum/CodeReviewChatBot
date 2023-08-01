@@ -10,6 +10,7 @@ import ChatTitle from './Chat/ChatTitle';
 import Comments from './Chat/Comments';
 import MarkdownRenderer from '../../utils/MarkdownRenderer';
 
+import '../../assets/css/chat.css';
 import logo from '../../assets/images/logo.png'
 
 
@@ -19,23 +20,23 @@ const Chat = () => {
     const [ comments, setComments ] = useState([]);
     const [ mode, setMode ] = useState('');
     const [ wait, setWait ] = useState('');
-    const [ userOwned, setUserOwned] = useState(false)
+    const [ userOwned, setUserOwned] = useState(false);
     const { logout, isLoggedIn } = useContext(AuthContext);
-    const { updateSideBar } = useContext(UpdateContext)
-    const navigate = useNavigate()
+    const { updateSideBar } = useContext(UpdateContext);
+    const navigate = useNavigate();
 
 
     const render = useCallback((response) => {
       if (response.status === 'good'){
-        setChat(response.data.chat)
-        setComments(response.data.comments)
-        localStorage.setItem('visited_post', response.data.visited_post)
+        setChat(response.data.chat);
+        setComments(response.data.comments);
+        localStorage.setItem('visited_post', response.data.visited_post);
         if (response.data.user_owned){
-          setUserOwned(true)
+          setUserOwned(true);
         } else {
-          setUserOwned(false)
+          setUserOwned(false);
         }
-        setMode('RENDER')
+        setMode('RENDER');
       }
       else if (response.status === 'Unauthorized') {
         logout();
@@ -72,25 +73,26 @@ const Chat = () => {
       const content = {
         "role": "user",
         "content": event.target.content.value
-      }
+      };
+      event.target.content.value = '';
       // 기존 데이터와 입력된 값을 합칩니다.
-      const tempChatContent = JSON.parse(chat.content)
-      tempChatContent.push(content)
-      const stringifyJSON = JSON.stringify(tempChatContent)
-      const newChatContent = {...chat, content:stringifyJSON}
+      const tempChatContent = JSON.parse(chat.content);
+      tempChatContent.push(content);
+      const stringifyJSON = JSON.stringify(tempChatContent);
+      const newChatContent = {...chat, content:stringifyJSON};
       // 새롭게 만들어진 chat을 content를 만들고 로딩창을 렌더링합니다.
-      setChat(newChatContent)
-      setWait(true)
+      setChat(newChatContent);
+      setWait(true);
       // formData를 만들고 서버로 전송합니다.
-      const formData = new FormData()
-      formData.append("title", event.target.title.value)
-      formData.append("content", stringifyJSON)
+      const formData = new FormData();
+      formData.append("title", event.target.title.value);
+      formData.append("content", stringifyJSON);
       const fetchData = async() => {
-        const response = await APIcall('post', `/chat/${chat.id}/update/`, formData)
+        const response = await APIcall('post', `/chat/${chat.id}/update/`, formData);
         render(response)
         if (response.status === 'good') {
-          updateSideBar()
-          setWait(false)
+          updateSideBar();
+          setWait(false);
         }
         else if (response.status === 'Unauthorized') {
           logout();

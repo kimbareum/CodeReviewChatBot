@@ -3,7 +3,8 @@ article {
     position: relative;
     padding: 4rem 2rem 2rem 2rem;
     height: 100vh;
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
     box-sizing: border-box;
     background-color: var(--black-background);
 }

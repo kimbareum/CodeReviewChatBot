@@ -5,10 +5,11 @@ import UpdateContext from '../Context/Update/UpdateContext';
 
 import Layout from './Layout';
 
+import '../../assets/css/chatlist.css';
+
 const ChatList = () => {
 
     const [chatList, setChatList] = useState([])
-    // const [page, setPage] = useState(1)
     const [paginator, setPaginator] = useState({page_range : [1], current_page : 1, prev_button: null, next_button: null})
     const [ showSearchModal, setShowSearchModal ] = useState(false)
     

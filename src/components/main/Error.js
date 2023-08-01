@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 
 import Layout from './Layout';
 
+import '../../assets/css/error.css';
+
 const Error = () => {
     return (
       <Layout className='error-page'>

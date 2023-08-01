@@ -13,9 +13,9 @@ function SideChatList(props) {
   const { logout }  = useContext(AuthContext)
   const navigate = useNavigate()
 
-  const submitDeleteChat = (event) => {
-    event.preventDefault()
-    const URL = event.target.getAttribute('href')
+  const submitDeleteChat = (e) => {
+    e.preventDefault()
+    const URL = e.target.getAttribute('href')
     const fetchData = async () => {
       // console.log("delete")
       const response = await APIcall('post', URL);

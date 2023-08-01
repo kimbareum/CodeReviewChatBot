@@ -9,8 +9,8 @@ import AuthContext from "../Context/Auth/AuthContext";
 function SideButtons() {
     const { isLoggedIn, user, logout } = useContext(AuthContext);
 
-    const submitLogout = (event) => {
-      event.preventDefault();
+    const submitLogout = (e) => {
+      e.preventDefault();
       const fetchLogout = async () => {
         // const response = await APIlogout()
         await APIlogout()

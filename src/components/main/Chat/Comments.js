@@ -7,9 +7,9 @@ import '../../../assets/css/comment.css'
 
 const ReplayForm = ({chat_id, comment_id, submitComment, toggleReplyForm}) => {
 
-  const submitReplyComment = (event) => {
+  const submitReplyComment = (e) => {
     toggleReplyForm()
-    submitComment(event)
+    submitComment(e)
   }
 
   return (

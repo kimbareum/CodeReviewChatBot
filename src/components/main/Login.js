@@ -5,7 +5,7 @@ import AuthContext from '../Context/Auth/AuthContext';
 
 import Layout from './Layout';
 
-const Login = (props) => {
+const Login = () => {
 
     const { login, isLoggedIn }  = useContext(AuthContext);
     const [ errors, setErrors ] = useState([])
@@ -17,11 +17,11 @@ const Login = (props) => {
       }
     }, [isLoggedIn, navigate])
 
-    const submitLogin = (event) => {
-        event.preventDefault()
+    const submitLogin = (e) => {
+        e.preventDefault()
         
         const fetchData = async () => {
-            const formData = new FormData(event.target)
+            const formData = new FormData(e.target)
             const response = await APIlogin(formData)
             if (response.status) {
               login(response.data)

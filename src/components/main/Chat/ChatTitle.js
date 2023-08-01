@@ -6,10 +6,8 @@ import { BASE_URL, APIcall } from '../../../utils/api';
 import ChatButtons from './ChatButtons';
 import UpdateContext from '../../Context/Update/UpdateContext';
 
-const ChatTitle = (props) => {
+const ChatTitle = ({chat, userOwned}) => {
 
-  const chat = props.chat
-  const userOwned = props.userOwned;
   const navigate = useNavigate();
   const [ mode, setMode ] = useState('RENDER')
   const [ title, setTitle ] = useState(chat.title)

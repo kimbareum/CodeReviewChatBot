@@ -9,6 +9,8 @@ import SideChatList from "./SideBar/SideChatList";
 import AuthContext from "./Context/Auth/AuthContext";
 import UpdateContext from "./Context/Update/UpdateContext";
 
+import "../assets/css/SideBar.css"
+
 
 function SideBar() {
 

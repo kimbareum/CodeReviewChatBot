@@ -5,7 +5,7 @@ import '../../assets/css/home.css'
 
 import Layout from './Layout';
 
-const Home = (props) => {
+const Home = () => {
   const { isLoggedIn }  = React.useContext(AuthContext);
 
 	return (

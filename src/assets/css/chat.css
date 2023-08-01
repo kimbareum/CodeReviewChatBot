@@ -33,7 +33,7 @@ article.write-page .chat-form {
 .chat-content {
     width: fit-content;
     max-width: 50vw;
-    padding: 1rem;
+    padding: 1.5rem;
     color: var(--black-color);
     margin-top: 1.7rem;
     margin-right: 4rem;
@@ -53,7 +53,8 @@ article.write-page .chat-form {
 
 
 .ai-chat .chat-content {
-    background-color: orange;
+    background-color: var(--white-color);
+    color: var(--black-color);
     border-radius: 0 20px 20px 20px;
     display: flex;
     flex-direction: column;
@@ -65,7 +66,8 @@ article.write-page .chat-form {
 }
 
 .user-chat .chat-content {
-    background-color: skyblue;
+    background-color: var(--black-color);
+    color: var(--white-color);
     border-radius: 20px 0px 20px 20px;
     margin-right: 0;
     margin-left: 4rem;
@@ -119,4 +121,24 @@ article.write-page .chat-form {
     background: transparent url('../icons/icon-loading.svg') no-repeat 50% 50% / 1.5rem;
     cursor:default;
     animation: rotateBackground 5s linear infinite;
+}
+
+.title-modify {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-right: 1rem;
+}
+
+.title-modify input {
+    width: 20rem;
+    background-color: var(--gray-color);
+    padding: 0.5rem;
+}
+
+.title-modify button {
+    width: 4rem;
+    height: 2rem;
+    font-size: 1rem;
+    padding: 0;
 }

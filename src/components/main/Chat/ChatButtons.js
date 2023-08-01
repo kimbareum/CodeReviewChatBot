@@ -4,24 +4,23 @@ import { APIcall } from '../../../utils/api'
 import UpdateContext from '../../Context/Update/UpdateContext'
 import { useNavigate } from 'react-router-dom'
 
-const ChatButtons = (props) => {
-  const chat_id = props.chat_id
+const ChatButtons = ({chat_id, mode, setMode, initializeInputValue})=> {
   const navigate = useNavigate()
   const { updateSideBar, updateChatList } = useContext(UpdateContext)
 
   const modifyTitle = () => {
-    if (props.mode === 'RENDER'){
-      props.setMode('MODIFY');
-      props.initializeInputValue()
+    if (mode === 'RENDER'){
+      setMode('MODIFY');
+      initializeInputValue()
     }
     else {
-      props.setMode('RENDER');
+      setMode('RENDER');
     }
   }
 
-  const submitDeleteChat = (event) => {
-    event.preventDefault()
-    const URL = event.target.getAttribute('href')
+  const submitDeleteChat = (e) => {
+    e.preventDefault()
+    const URL = e.target.getAttribute('href')
     const fetchData = async () => {
       const response = await APIcall('post', URL)
       if (response.status === 'good') {
