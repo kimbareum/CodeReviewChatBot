@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/CodeReviewChatBot/static/css/main.d3123dcd.css",
-    "main.js": "/CodeReviewChatBot/static/js/main.7d19aa0d.js",
-    "static/js/787.28cb0dcd.chunk.js": "/CodeReviewChatBot/static/js/787.28cb0dcd.chunk.js",
+    "main.css": "/CodeReviewChatBot/static/css/main.050651b9.css",
+    "main.js": "/CodeReviewChatBot/static/js/main.624e1739.js",
+    "static/js/787.fe421225.chunk.js": "/CodeReviewChatBot/static/js/787.fe421225.chunk.js",
     "static/media/icon-github.svg": "/CodeReviewChatBot/static/media/icon-github.571cca444fce68f0b3c5.svg",
     "static/media/icon-modify.svg": "/CodeReviewChatBot/static/media/icon-modify.5f97e9974762b35d1776.svg",
     "static/media/icon-modify-white.svg": "/CodeReviewChatBot/static/media/icon-modify-white.7936232650b55b108bd1.svg",
@@ -16,12 +16,12 @@
     "static/media/icon-chat.svg": "/CodeReviewChatBot/static/media/icon-chat.597574ab7cd379eb597f.svg",
     "static/media/icon-chat-white.svg": "/CodeReviewChatBot/static/media/icon-chat-white.f56502d59492553005b6.svg",
     "static/media/icon-send.svg": "/CodeReviewChatBot/static/media/icon-send.4a89f1bb0928061f8809.svg",
-    "main.d3123dcd.css.map": "/CodeReviewChatBot/static/css/main.d3123dcd.css.map",
-    "main.7d19aa0d.js.map": "/CodeReviewChatBot/static/js/main.7d19aa0d.js.map",
-    "787.28cb0dcd.chunk.js.map": "/CodeReviewChatBot/static/js/787.28cb0dcd.chunk.js.map"
+    "main.050651b9.css.map": "/CodeReviewChatBot/static/css/main.050651b9.css.map",
+    "main.624e1739.js.map": "/CodeReviewChatBot/static/js/main.624e1739.js.map",
+    "787.fe421225.chunk.js.map": "/CodeReviewChatBot/static/js/787.fe421225.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d3123dcd.css",
-    "static/js/main.7d19aa0d.js"
+    "static/css/main.050651b9.css",
+    "static/js/main.624e1739.js"
   ]
 }
