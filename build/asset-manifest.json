@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/CodeReviewChatBot/static/css/main.4ecbb402.css",
+    "main.css": "/CodeReviewChatBot/static/css/main.031a6aff.css",
     "main.js": "/CodeReviewChatBot/static/js/main.39e7b44b.js",
     "static/js/787.28cb0dcd.chunk.js": "/CodeReviewChatBot/static/js/787.28cb0dcd.chunk.js",
     "static/media/icon-github.svg": "/CodeReviewChatBot/static/media/icon-github.571cca444fce68f0b3c5.svg",
@@ -15,12 +15,12 @@
     "static/media/icon-chat.svg": "/CodeReviewChatBot/static/media/icon-chat.597574ab7cd379eb597f.svg",
     "static/media/icon-chat-white.svg": "/CodeReviewChatBot/static/media/icon-chat-white.f56502d59492553005b6.svg",
     "static/media/icon-send.svg": "/CodeReviewChatBot/static/media/icon-send.4a89f1bb0928061f8809.svg",
-    "main.4ecbb402.css.map": "/CodeReviewChatBot/static/css/main.4ecbb402.css.map",
+    "main.031a6aff.css.map": "/CodeReviewChatBot/static/css/main.031a6aff.css.map",
     "main.39e7b44b.js.map": "/CodeReviewChatBot/static/js/main.39e7b44b.js.map",
     "787.28cb0dcd.chunk.js.map": "/CodeReviewChatBot/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4ecbb402.css",
+    "static/css/main.031a6aff.css",
     "static/js/main.39e7b44b.js"
   ]
 }

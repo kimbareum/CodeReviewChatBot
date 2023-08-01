@@ -19,7 +19,10 @@ const Home = (props) => {
         <p>이 서비스를 통해서 여러분의 코드를 더욱 더 발전시켜나가세요!</p>
         <div className='link-wrap'>
         {isLoggedIn ? (
-            <Link to='/chat/write/' className='button'>새로운 글 작성하기</Link>
+            <>
+              <Link to='/chat/write/' className='button'>새로운 글 작성하기</Link>
+              <Link to='/chat/list/' className='button'>게시글 목록 보기</Link>
+            </>
           ) : (
           <>
             <Link to='/login/' className='button'>로그인</Link>

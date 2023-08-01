@@ -9,7 +9,7 @@ const ChatList = () => {
 
     const [chatList, setChatList] = useState([])
     const [page, setPage] = useState(1)
-    const [paginator, setPaginator] = useState({page_range : [1], current_page : 1})
+    const [paginator, setPaginator] = useState({page_range : [1], current_page : 1, prev_button: null, next_button: null})
     const { chatListState } = useContext(UpdateContext)
 
     useEffect(() => {
@@ -58,6 +58,7 @@ const ChatList = () => {
             <tfoot></tfoot>
           </table>
           <ul className='page-list'>
+            {paginator.prev_button && <li><a href={`/chat/list/?page=${paginator.prev_button}`} className='page button gray pn-button'  onClick={pageChange}>PREV</a></li>}
             {paginator.page_range.map((item, index) => (
               <li key={index}>
               {item === paginator.current_page? (
@@ -67,6 +68,7 @@ const ChatList = () => {
               )}
               </li>
             ))}
+            {paginator.next_button && <li><a href={`/chat/list/?page=${paginator.next_button}`} className='page button gray pn-button'  onClick={pageChange}>NEXT</a></li>}
           </ul>
         </Layout>
     );

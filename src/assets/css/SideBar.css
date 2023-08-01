@@ -38,6 +38,7 @@
 .side-bar .chat-wrap {
     display: flex;
     flex-direction: row;
+    gap: 0.7rem;
     justify-content: space-between;
 }
 

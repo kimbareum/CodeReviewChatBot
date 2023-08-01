@@ -49,3 +49,21 @@
     display: flex;
     gap: 0.5rem;
 }
+
+.update-form {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.update-form textarea {
+    flex-grow:1;
+}
+
+.update-form .send-button {
+    width: 2.7rem;
+    height: 2.7rem;
+    background-size: 1.4rem;
+    margin-right: 1rem;
+}
