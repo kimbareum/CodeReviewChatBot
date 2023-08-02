@@ -76,3 +76,9 @@ input, button {
     height: 2rem;
     background: transparent url('../icons/icon-search.svg') no-repeat 50% 50% / 1.5rem;
 }
+
+.reset-button {
+    width: 2rem;
+    height: 2rem;
+    background: transparent url('../icons/icon-reset.svg') no-repeat 50% 50% / 1.5rem;
+}

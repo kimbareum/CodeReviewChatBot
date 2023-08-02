@@ -5,7 +5,7 @@
     justify-content: center;
     gap: 1rem;
     padding: 2rem;
-    margin-top: 25vh;
+    margin-top: 26vh;
 }
 
 .auth-form .error {
@@ -13,11 +13,11 @@
 }
 
 .signup-page .auth-form {
-    margin-bottom: 27.6vh;
+    margin-bottom: 26.6vh;
 }
 
 .login-page .auth-form {
-    margin-bottom: 35.6vh;
+    margin-bottom: 34.7vh;
 }
 
 .auth-wrap {

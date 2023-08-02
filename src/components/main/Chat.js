@@ -56,7 +56,7 @@ const Chat = () => {
           response = await APIcall('authGet', `/chat/detail/${chat_id}/`, {params:{visited_post:visitedPost}});
           }
           else {
-            response = await APIcall('get', `/chat/detail/${chat_id}/`);
+            response = await APIcall('get', `/chat/detail/${chat_id}/`, {params:{visited_post:visitedPost}});
           }
           render(response)
         }

@@ -15,7 +15,7 @@ const ChatList = () => {
     
     const location = useLocation();
     const searchParams = new URLSearchParams(location.search);
-    const type = searchParams.get('type') || null;
+    const type = searchParams.get('type') || '';
     const text = searchParams.get('text') || '';
     const page = searchParams.get('page') || 1;
     let initialTitle = type && text ? `${type ==="title" ? '제목': 'content' ? '내용': '작성자'} ${text} 검색결과` : "Other User's Chat"
@@ -59,6 +59,12 @@ const ChatList = () => {
       if (e.target.nodeName!=="INPUT" && e.target.nodeName!=="SELECT" && e.target.type !== 'submit'){
         setShowSearchModal(!showSearchModal)
       }
+    }
+
+    const resetSearchValue = () => {
+      setSearchOption({type: "", text: "", page:1})
+      setTitle("Other User's Chat")
+      navigate(`/chat/list/?page=1`)
     }
 
     return (
@@ -116,7 +122,11 @@ const ChatList = () => {
               </li>
             ))}
             {paginator.next_button && <li><a href={`/chat/list/?page=${paginator.next_button}`} className='page button gray pn-button'  onClick={pageChange}>NEXT</a></li>}
-            {!showSearchModal&&(<button type='button' className='search-button' onClick={toggleSearchModal}></button>)}
+            {!showSearchModal&&(
+            <div className='search-button-wrap'>
+              <button type='button' className='reset-button' onClick={resetSearchValue}></button>
+              <button type='button' className='search-button' onClick={toggleSearchModal}></button>
+            </div>)}
           </ul>
         </Layout>
     );
