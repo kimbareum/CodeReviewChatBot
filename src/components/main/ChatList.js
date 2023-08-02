@@ -18,7 +18,7 @@ const ChatList = () => {
     const type = searchParams.get('type') || '';
     const text = searchParams.get('text') || '';
     const page = searchParams.get('page') || 1;
-    let initialTitle = type && text ? `${type ==="title" ? '제목': 'content' ? '내용': '작성자'} ${text} 검색결과` : "Other User's Chat"
+    let initialTitle = type && text ? `${type === "title" ? '제목' : (type === "content" ? '내용' : '작성자')} ${text} 검색결과` : "Other User's Chat"
     const [ title, setTitle ] = useState(initialTitle)
     const [ searchOption, setSearchOption ] = useState({type:type, text:text, page:page})
     const { chatListState } = useContext(UpdateContext)
@@ -49,7 +49,7 @@ const ChatList = () => {
         type: e.target.type.value,
         text: e.target.searchText.value,
       }
-      setTitle(`${params.type} : ${params.text} 검색결과`)
+      setTitle(`${params.type === "title" ? '제목' : (params.type === "content" ? '내용' : '작성자')} ${params.text} 검색결과`)
       setSearchOption(params)
       setShowSearchModal(!showSearchModal)
       navigate(`/chat/list/?type=${params.type}&text=${params.text}&page=1`)

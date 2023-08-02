@@ -7,7 +7,7 @@
 ## 개발환경 및 개발 기간
 
 - 개발환경
-    React, css
+    React, css, React-Markdown, React-SyntaxHighlight, React-router-dom
 
 - 백엔드
     [백엔드 레포지토리](https://github.com/kimbareum/CodeReviewChatBot-backend)

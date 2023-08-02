@@ -8,6 +8,8 @@ import Chat from "./main/Chat";
 import Login from "./main/Login";
 import SignUp from "./main/SignUp";
 import Profile from "./main/Profile";
+import UserDelete from "./main/Profile/UserDelete";
+import PasswordChange from "./main/Profile/PasswordChange";
 import Error from "./main/Error";
 
 import { Routes, Route } from 'react-router-dom';
@@ -24,6 +26,8 @@ const Main = () => {
           <Route path="/login" element={<Login />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/profile/:user_id" element={<Profile />}></Route>
+          <Route path="/user/delete" element={<UserDelete />}></Route>
+          <Route path="/user/password/change" element={<PasswordChange />}></Route>
           <Route path="/error/" element={<Error />}></Route>
           <Route path="*" element={<Error />}></Route>
         </Routes>

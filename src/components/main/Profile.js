@@ -78,8 +78,13 @@ const Profile = () => {
       <Layout className='profile-page'>
         <div className='title-wrap'>
           <h2>Profile</h2>
+          <div className='profile-buttons'>
+            <button className='button gray' onClick={() => navigate('/user/password/change/')}>비밀번호 변경</button>
+            <button className='button gray' onClick={() => navigate('/user/delete/')}>회원탈퇴</button>
+          </div>
         </div>
       <form method='post' className='profile-form' onSubmit={submitProfile}>
+        
         <div className='profile-wrap'>
           <p>
             <label htmlFor='id_nickname'>닉네임</label>

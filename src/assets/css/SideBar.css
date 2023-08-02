@@ -65,3 +65,15 @@
     flex-direction: column;
     gap: 1rem;
 }
+
+.side-bar .other-wrap p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.side-bar .other-wrap img {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+}

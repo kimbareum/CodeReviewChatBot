@@ -20,6 +20,14 @@
     margin-bottom: 34.7vh;
 }
 
+.password-change-page .auth-form {
+    margin-bottom: 30.7vh;
+}
+
+.user-delete-page .auth-form {
+    margin-bottom: 32.2vh;
+}
+
 .auth-wrap {
     display: flex;
     flex-direction: column;

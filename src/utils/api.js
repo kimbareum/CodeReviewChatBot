@@ -52,6 +52,47 @@ export const APIcall = async (method, url, data) => {
   }
 }
 
+export const APIPasswordChange = async (data) => {
+  try {
+    return await authAPI.post(BASE_URL+'/user/password/change/', data, {
+      withCredentials: true,
+      credentials: 'include',
+    }).then((res) => {
+      const data = res.data;
+      return {status: "good", data: data};
+    })
+    .catch((e) => {
+      throw e.response;
+    })
+  }
+  catch(e) {
+    if (e.status===401) {
+      const refresh = await tokenRefresh()
+      if (!refresh){
+        return {status: "Unauthorized"}
+      }
+      try{
+        return await authAPI.post(BASE_URL+'/user/password/change/', data, {
+          withCredentials: true,
+          credentials: 'include',
+        }).then((res) => {
+          const data = res.data;
+          return {status: "good", data: data};
+        })
+        .catch((e) => {
+          throw e.response;
+        })
+      }
+      catch(e) {
+        const errors = e;
+        return {status: "fail", data: errors}
+      }
+    }
+    const errors = e;
+    return {status: "fail", data: errors}
+  }
+}
+
 
 export const APIlogin = async (data) => {
 
@@ -61,9 +102,7 @@ export const APIlogin = async (data) => {
   })
     .then((res) => {
       const data = res.data;
-      // console.log(document.cookie)
       authAPI.defaults.headers.common['Authorization'] = `Bearer ${data.access_token}`;
-      // authAPI.defaults.headers.common['X-CSRFToken'] = getCookie('csrftoken');
       return {status: true, data: data.user}
     })
     .catch((e) => {
@@ -115,3 +154,5 @@ export const tokenRefresh = async () => {
       return false
     })
 }
+
+
